@@ -1,0 +1,298 @@
+{
+  "number": 7,
+  "slug": "chess-defensive-thinking",
+  "title": "Find a Defensive Resource",
+  "goal": "Identify the threat, compare defenses, and check whether the attacker can be removed.",
+  "lessons": [
+    {
+      "id": "07.1",
+      "title": "Capture, block, or move the king",
+      "idea": "When in check, organize the search. Try captures of the checker, blocks of a line check, and safe king moves. A legal defense must also survive the next reply.",
+      "facts": [
+        "Black's rook on e1 checks the white king along e1-f1-g1.",
+        "White's rook on a1 can capture the checker along the clear first rank.",
+        "White's bishop could block on f1, but that is not the only defense."
+      ],
+      "explain": [
+        "Rxe1 removes the attacking rook completely. After the capture, Black has no rook left to continue checking. White has solved the immediate problem while gaining a rook.",
+        "Bf1 would also block the line, but it leaves Black's rook on the board. Prefer a defense that both answers the threat and improves the resulting position when the calculation supports it. Do not stop searching just because the first legal move avoids mate."
+      ],
+      "caution": "An undefended checking piece is often capturable, but verify what stands behind it. A second attacker can replace the first on the same checking square.",
+      "questions": [
+        "What extra black piece stands behind the checking rook?",
+        "Calculate Rxe1 through Black's recapture.",
+        "How can White answer the second check, and why is the blocking piece safe from immediate capture?"
+      ],
+      "answers": [
+        "Black has another rook on e8. The e-file between the two black rooks is clear, so it can replace the rook that White captures.",
+        "Rxe1 Rxe1+ leaves White facing a second rook check. Ending the calculation after White's first capture would miss this reply.",
+        "Bf1 blocks the line using the diagonal c4-d3-e2-f1. The white king on g1 protects f1; if Black plays ...Rxf1+, Kxf1 takes that last rook. White has found a continuing defense, not merely one legal move. The sample does not attempt to solve the entire resulting endgame."
+      ],
+      "transfer": "For one check in each practice game, list the three response categories before moving. Follow your chosen response until all immediate checking captures are answered.",
+      "recall": [
+        "Why must you look behind a checking rook before capturing it?",
+        "A second rook or queen may recapture and renew the check on the same line."
+      ],
+      "positions": {
+        "A": {
+          "fen": "6k1/8/8/8/8/8/4BPPP/R3r1K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "Rxe1",
+          "alternative": "",
+          "purpose": "tactic",
+          "validation": {
+            "id": "07.1A",
+            "title": "Capture, block, or move the king",
+            "fen": "6k1/8/8/8/8/8/4BPPP/R3r1K1 w - - 0 1",
+            "line": "Rxe1",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Rxe1",
+                "score": "+895",
+                "depth": 18
+              },
+              {
+                "san": "Bf1",
+                "score": "+250",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+7107"
+          }
+        },
+        "B": {
+          "fen": "4r2k/8/8/8/2B5/8/5PPP/R3r1K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "Rxe1 Rxe1+ Bf1",
+          "alternative": "",
+          "purpose": "defense",
+          "validation": {
+            "id": "07.1B",
+            "title": "Capture, block, or move the king",
+            "fen": "4r2k/8/8/8/2B5/8/5PPP/R3r1K1 w - - 0 1",
+            "line": "Rxe1 Rxe1+ Bf1",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Rxe1",
+                "score": "+342",
+                "depth": 18
+              },
+              {
+                "san": "Bf1",
+                "score": "-761",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+393"
+          }
+        }
+      }
+    },
+    {
+      "id": "07.2",
+      "title": "An escape square must be safe",
+      "idea": "Making an escape square can prevent back-rank mate. The square must be empty, reachable by the king, and free of enemy attacks after the check arrives.",
+      "facts": [
+        "White's king has three pawns directly in front of its possible escape squares.",
+        "Black's rook can enter on e1 with a back-rank check.",
+        "Moving the h-pawn to h3 leaves h2 available to the king."
+      ],
+      "explain": [
+        "h3 creates an escape square. If Black plays ...Re1+, Kh2 steps off the first rank. The rook on e1 attacks f1 and h1, but it does not attack h2.",
+        "This is one preventive choice, not the only move. White could also investigate a king move or other pawn moves. The point is to test the intended escape after the opponent's check, when the board has actually changed."
+      ],
+      "caution": "A pawn move does not automatically create useful breathing room. A bishop on a long diagonal may already control the square you intend to use.",
+      "questions": [
+        "Which square does the bishop on b8 attack through c7-d6-e5-f4-g3?",
+        "Why does h3 fail against ...Re1 in this position?",
+        "Show an alternative pawn move and a safe king response to the check."
+      ],
+      "answers": [
+        "The bishop attacks h2. All intervening squares on that diagonal are empty in the starting position.",
+        "After h3 Re1#, h2 is empty but attacked by the bishop. The king cannot use it, while the rook controls the first rank and the other pawn squares remain occupied. This is checkmate.",
+        "g3 Re1+ Kg2 avoids the immediate mate: g2 is vacated and not attacked by either black piece. The g3-pawn also blocks the bishop's diagonal. Black still has an extra bishop, so avoiding this mate does not make the whole position equal."
+      ],
+      "transfer": "Before creating an escape square, point to every enemy bishop and rook and trace their lines to that square. Recheck after any intervening pawn move.",
+      "recall": [
+        "What three conditions must an escape square satisfy?",
+        "It must be empty, reachable by the king, and not attacked in the resulting position."
+      ],
+      "positions": {
+        "A": {
+          "fen": "4r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "h3 Re1+ Kh2",
+          "alternative": "",
+          "purpose": "candidate",
+          "validation": {
+            "id": "07.2A",
+            "title": "An escape square must be safe",
+            "fen": "4r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1",
+            "line": "h3 Re1+ Kh2",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Kf1",
+                "score": "+31",
+                "depth": 18
+              },
+              {
+                "san": "f4",
+                "score": "+25",
+                "depth": 18
+              },
+              {
+                "san": "g3",
+                "score": "+21",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "0"
+          }
+        },
+        "B": {
+          "fen": "1b2r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "g3 Re1+ Kg2",
+          "alternative": "h3 Re1#",
+          "purpose": "defense",
+          "validation": {
+            "id": "07.2B",
+            "title": "An escape square must be safe",
+            "fen": "1b2r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1",
+            "line": "g3 Re1+ Kg2",
+            "bad": "h3 Re1#",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "g3",
+                "score": "-606",
+                "depth": 18
+              },
+              {
+                "san": "g4",
+                "score": "-621",
+                "depth": 18
+              },
+              {
+                "san": "Kf1",
+                "score": "-624",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "-613"
+          }
+        }
+      }
+    },
+    {
+      "id": "07.3",
+      "title": "Remove or exchange the attacker",
+      "idea": "A threat often depends on cooperation between two attacking pieces. Removing the support may defeat the threat while gaining material, even if the attacking queen stays active.",
+      "facts": [
+        "Black threatens ...Qxh2#: the queen would be protected on h2 by the bishop on d6.",
+        "White's queen on d3 can capture that bishop along the clear d-file.",
+        "The knight on f2 does not attack the black queen on h4."
+      ],
+      "explain": [
+        "Qxd6 removes the bishop that makes the h2 attack dangerous. If Black blindly continues ...Qxh2+, White can now play Kxh2 because the queen has lost its defender. The line is a test of the old threat, not a recommendation that Black sacrifice its queen.",
+        "After Qxd6, Black should choose a better reply, but White has already won the bishop and stopped the immediate mating idea. A defensive move can look active because it attacks the foundation of the threat."
+      ],
+      "caution": "Qh3 also offers a queen exchange: ...Qxh3 Nxh3. It addresses the immediate attack but misses the direct gain of the bishop. Compare defenses by the position they leave, not only by whether they stop mate.",
+      "questions": [
+        "Where is the white knight now, and what does it attack?",
+        "What is the simplest way to remove Black's queen?",
+        "Why should you inspect captures before choosing a defensive queen move?"
+      ],
+      "answers": [
+        "The knight has moved from f2 to f3. From f3 it attacks h4, the square occupied by Black's queen. This one-square change creates a much stronger resource.",
+        "Nxh4 captures the queen. No black piece can recapture the knight on h4 immediately. White should notice this before considering a queen exchange or a pawn move.",
+        "A forcing capture can eliminate the threat and gain decisive material. Qxd6 remains a way to remove the bishop, but taking the queen is the larger opportunity. Defensive thinking should begin with the actual legal captures, not with an assumption that only passive moves are available."
+      ],
+      "transfer": "When you see a mating threat, identify the attacking piece and its defender separately. Test capturing either one, then verify whether the original mating move still works.",
+      "recall": [
+        "Why does Qxd6 answer the threat of ...Qxh2# in Model A?",
+        "It removes the bishop protecting h2, so a later ...Qxh2+ can be met by Kxh2."
+      ],
+      "positions": {
+        "A": {
+          "fen": "5rk1/5ppp/2pb4/8/7q/3Q4/2P2NPP/5RK1 w - - 0 1",
+          "opening_moves": "",
+          "line": "Qxd6 Qxh2+ Kxh2",
+          "alternative": "Qh3 Qxh3 Nxh3",
+          "purpose": "defense",
+          "validation": {
+            "id": "07.3A",
+            "title": "Remove or exchange the attacker",
+            "fen": "5rk1/5ppp/2pb4/8/7q/3Q4/2P2NPP/5RK1 w - - 0 1",
+            "line": "Qxd6 Qxh2+ Kxh2",
+            "bad": "Qh3 Qxh3 Nxh3",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qxd6",
+                "score": "+600",
+                "depth": 18
+              },
+              {
+                "san": "g3",
+                "score": "-67",
+                "depth": 18
+              },
+              {
+                "san": "Nh3",
+                "score": "-200",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+608"
+          }
+        },
+        "B": {
+          "fen": "5rk1/5ppp/2pb4/8/7q/3Q1N2/2P3PP/5RK1 w - - 0 1",
+          "opening_moves": "",
+          "line": "Nxh4",
+          "alternative": "",
+          "purpose": "tactic",
+          "validation": {
+            "id": "07.3B",
+            "title": "Remove or exchange the attacker",
+            "fen": "5rk1/5ppp/2pb4/8/7q/3Q1N2/2P3PP/5RK1 w - - 0 1",
+            "line": "Nxh4",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Nxh4",
+                "score": "+951",
+                "depth": 18
+              },
+              {
+                "san": "Qxd6",
+                "score": "+612",
+                "depth": 18
+              },
+              {
+                "san": "g3",
+                "score": "-71",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+956"
+          }
+        }
+      }
+    }
+  ]
+}

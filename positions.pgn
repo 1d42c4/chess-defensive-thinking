@@ -1,0 +1,71 @@
+[Event "Find a Defensive Resource / 07.1A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.1"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "6k1/8/8/8/8/8/4BPPP/R3r1K1 w - - 0 1"]
+[SetUp "1"]
+
+{ When in check, organize the search. Try captures of the checker, blocks of a line check, and safe king moves. A legal defense must also survive the next reply. } 1. Rxe1 { Illustrative line. Rxe1 removes the attacking rook completely. After the capture, Black has no rook left to continue checking. White has solved the immediate problem while gaining a rook. Bf1 would also block the line, but it leaves Black's rook on the board. Prefer a defense that both answers the threat and improves the resulting position when the calculation supports it. Do not stop searching just because the first legal move avoids mate. } *
+
+[Event "Find a Defensive Resource / 07.1B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.1"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "4r2k/8/8/8/2B5/8/5PPP/R3r1K1 w - - 0 1"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 1. Rxe1 Rxe1+ 2. Bf1 { Illustrative line. Black has another rook on e8. The e-file between the two black rooks is clear, so it can replace the rook that White captures. Rxe1 Rxe1+ leaves White facing a second rook check. Ending the calculation after White's first capture would miss this reply. Bf1 blocks the line using the diagonal c4-d3-e2-f1. The white king on g1 protects f1; if Black plays ...Rxf1+, Kxf1 takes that last rook. White has found a continuing defense, not merely one legal move. The sample does not attempt to solve the entire resulting endgame. } *
+
+[Event "Find a Defensive Resource / 07.2A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.2"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "4r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1"]
+[SetUp "1"]
+
+{ Making an escape square can prevent back-rank mate. The square must be empty, reachable by the king, and free of enemy attacks after the check arrives. } 1. h3 Re1+ 2. Kh2 { Illustrative line. h3 creates an escape square. If Black plays ...Re1+, Kh2 steps off the first rank. The rook on e1 attacks f1 and h1, but it does not attack h2. This is one preventive choice, not the only move. White could also investigate a king move or other pawn moves. The point is to test the intended escape after the opponent's check, when the board has actually changed. } *
+
+[Event "Find a Defensive Resource / 07.2B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.2"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "1b2r1k1/pp3ppp/8/8/2R5/8/PP3PPP/6K1 w - - 0 1"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 1. g3 ( 1. h3 { Alternative for comparison; read the explanation before treating it as a recommendation. } 1... Re1# ) 1... Re1+ 2. Kg2 { Illustrative line. The bishop attacks h2. All intervening squares on that diagonal are empty in the starting position. After h3 Re1#, h2 is empty but attacked by the bishop. The king cannot use it, while the rook controls the first rank and the other pawn squares remain occupied. This is checkmate. g3 Re1+ Kg2 avoids the immediate mate: g2 is vacated and not attacked by either black piece. The g3-pawn also blocks the bishop's diagonal. Black still has an extra bishop, so avoiding this mate does not make the whole position equal. } *
+
+[Event "Find a Defensive Resource / 07.3A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.3"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "5rk1/5ppp/2pb4/8/7q/3Q4/2P2NPP/5RK1 w - - 0 1"]
+[SetUp "1"]
+
+{ A threat often depends on cooperation between two attacking pieces. Removing the support may defeat the threat while gaining material, even if the attacking queen stays active. } 1. Qxd6 ( 1. Qh3 { Alternative for comparison; read the explanation before treating it as a recommendation. } 1... Qxh3 2. Nxh3 ) 1... Qxh2+ 2. Kxh2 { Illustrative line. Qxd6 removes the bishop that makes the h2 attack dangerous. If Black blindly continues ...Qxh2+, White can now play Kxh2 because the queen has lost its defender. The line is a test of the old threat, not a recommendation that Black sacrifice its queen. After Qxd6, Black should choose a better reply, but White has already won the bishop and stopped the immediate mating idea. A defensive move can look active because it attacks the foundation of the threat. } *
+
+[Event "Find a Defensive Resource / 07.3B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "07.3"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "5rk1/5ppp/2pb4/8/7q/3Q1N2/2P3PP/5RK1 w - - 0 1"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 1. Nxh4 { Illustrative line. The knight has moved from f2 to f3. From f3 it attacks h4, the square occupied by Black's queen. This one-square change creates a much stronger resource. Nxh4 captures the queen. No black piece can recapture the knight on h4 immediately. White should notice this before considering a queen exchange or a pawn move. A forcing capture can eliminate the threat and gain decisive material. Qxd6 remains a way to remove the bishop, but taking the queen is the larger opportunity. Defensive thinking should begin with the actual legal captures, not with an assumption that only passive moves are available. } *
